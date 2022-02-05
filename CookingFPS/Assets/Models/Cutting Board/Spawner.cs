@@ -10,11 +10,12 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         Debug.Log("Spawner: " + spawnable.name);
+        Spawn();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Spawn()
     {
-        
+        GameObject Spawned = Instantiate(spawnable, transform.position, transform.rotation);
+        Spawned.GetComponent(ReSpawner).spawner = gameObject;
     }
 }
