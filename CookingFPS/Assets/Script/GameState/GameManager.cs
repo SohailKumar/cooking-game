@@ -5,10 +5,10 @@ using UnityEngine;
 class GameManager : MonoBehavior
 {
     public void SwitchLevel(){
-        sceneManager.LoadSciene(SceneManger.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadSciene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Restart(){
-        ScneneManger.LoadSciene(SceneManger.GetActiveScene().name);
+        SceneManger.LoadSciene(SceneManager.GetActiveScene().name);
     }
 }
