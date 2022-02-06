@@ -18,7 +18,9 @@ public abstract class Food: MonoBehaviour{
 
     public void Shot(Transform barrelPos, float shootSpeed)
     {
-        this.gameObject.SetActive(true);
+        //this.gameObject.SetActive(true);
+        this.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        this.gameObject.GetComponent<Collider>().enabled = true;
         this.gameObject.transform.position = barrelPos.position;
         //this.gameObject.transform.rotation = barrelPos.rotation;
 
@@ -44,10 +46,10 @@ public abstract class Food: MonoBehaviour{
         {
             Debug.Log("Appliance");
             
-            Cook();
+            Cook(other.gameObject);
             other.gameObject.GetComponent<applianceState>().StartCooking(this.gameObject);
             gameObject.GetComponent<MeshRenderer>().enabled = false;
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            gameObject.GetComponent<Collider>().enabled = false;
         }
 
         if (other.gameObject.CompareTag("Enemy"))
@@ -60,9 +62,14 @@ public abstract class Food: MonoBehaviour{
 
     public void PickUp()
     {
-        this.gameObject.SetActive(false);
+        Debug.Log("in pickup");
+        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        this.gameObject.GetComponent<Collider>().enabled = false;
+        //this.gameObject.SetActive(false);
     }
 
-    public abstract void Cook();
+    public abstract void Cook(GameObject app);
+
+    public abstract void Remove();
 	
 } 

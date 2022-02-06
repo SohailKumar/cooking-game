@@ -6,8 +6,12 @@ public class Player : MonoBehaviour{
 
 	//private String is_hit_sound; 
 	//private String dying_sound;
-	private GameObject inHand;
+	[SerializeField] private GameObject inHand;
 	[SerializeField] private float shootSpeed;
+	public GameObject bread;
+	public GameObject potato;
+	public GameObject bakedP;
+
     /*
 	public Player(){ 
 		this.hp = 100; 
@@ -59,7 +63,7 @@ public class Player : MonoBehaviour{
     {
 		if (inHand != null)
 		{
-			inHand.GetComponent<Food>().Shot(transform, shootSpeed);
+			inHand.GetComponent<Food>().Shot(this.transform, shootSpeed);
 			inHand = null;
 		}
     }
@@ -70,12 +74,19 @@ public class Player : MonoBehaviour{
         {
 			if (other.CompareTag("PickUp"))
 			{
-				inHand = other.gameObject;
-				inHand.GetComponent<Food>().PickUp();
+                try
+				{
+					inHand = other.gameObject;
+					Debug.Log("inhand: " + inHand.name);
+					other.GetComponent<Food>().PickUp();
+					Debug.Log("2");
+				}catch
+                {
+					inHand = null;
+                }
 			}else if (other.CompareTag("Appliance"))
             {
 				inHand = other.GetComponent<applianceState>().PickupFood();
-				Debug.Log("THing: " + inHand);
             }
         }
     }
