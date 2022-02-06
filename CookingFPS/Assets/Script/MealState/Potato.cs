@@ -26,7 +26,6 @@ public class Potato : Food
                 bp.GetComponent<MeshRenderer>().enabled = false;
                 bp.gameObject.GetComponent<Collider>().enabled = false;
                 stove.GetComponent<applianceState>().SwitchFood(bp);
-                Debug.Log("Baked Potato");
                 //switch to baked potato.
             }
         }
@@ -43,7 +42,6 @@ public class Potato : Food
                 currTime = cookTime;
             }
             isCooking = true;
-            Debug.Log("Stove good");
         }
     }
 
@@ -53,7 +51,6 @@ public class Potato : Food
         {
             isCooking = false;
             stove = null;
-            Debug.Log("Remove from cooking");
         }
     }
 }

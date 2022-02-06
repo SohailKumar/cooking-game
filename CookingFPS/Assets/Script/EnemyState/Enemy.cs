@@ -11,19 +11,27 @@ public class Enemy:MonoBehaviour{
     //private String is_hit_sound; 
     //private String dying_sound; 
 
+    [SerializeField] private float timeBtwDmg;
+    private float currTimeBtwDMg;
+
     public void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Protect");
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        currTimeBtwDMg = 0;
     }
 
     public void TakeDamage(int dmg)
     {
-		Debug.Log("HP: " + hp + ", DMG: " + dmg);
-		hp -= dmg;
-		if(hp <= 0)
+        if (currTimeBtwDMg <= 0)
         {
-			Destroy(this.gameObject);
+            Debug.Log("HP: " + hp + ", DMG: " + dmg);
+            hp -= dmg;
+            if (hp <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+            currTimeBtwDMg = timeBtwDmg;
         }
     }
 
@@ -31,6 +39,10 @@ public class Enemy:MonoBehaviour{
     {
 		transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step * Time.deltaTime);
         transform.LookAt(target.transform.position);
+        if(currTimeBtwDMg > 0)
+        {
+            currTimeBtwDMg -= Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter(Collider collision)

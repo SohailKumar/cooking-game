@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameOverPanel.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
+        
     }
 
     public void NextLevel(){
@@ -25,5 +25,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 }

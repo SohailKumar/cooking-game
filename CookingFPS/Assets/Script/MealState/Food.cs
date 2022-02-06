@@ -45,8 +45,6 @@ public abstract class Food: MonoBehaviour{
     {
         if (other.gameObject.CompareTag("Appliance"))
         {
-            Debug.Log("Appliance");
-            
             Cook(other.gameObject);
             other.gameObject.GetComponent<applianceState>().StartCooking(this.gameObject);
             gameObject.GetComponent<MeshRenderer>().enabled = false;
@@ -55,7 +53,6 @@ public abstract class Food: MonoBehaviour{
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy");
             other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(this.gameObject);
         }
@@ -63,7 +60,6 @@ public abstract class Food: MonoBehaviour{
 
     public void PickUp()
     {
-        Debug.Log("in pickup");
         this.gameObject.GetComponent<MeshRenderer>().enabled = false;
         this.gameObject.GetComponent<Collider>().enabled = false;
         //this.gameObject.SetActive(false);

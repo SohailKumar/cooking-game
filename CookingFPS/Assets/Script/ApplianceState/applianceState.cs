@@ -19,7 +19,7 @@ public class applianceState : MonoBehaviour
             this.foodCooking = null;
             return temp;
         }else{
-            print("Appliance is empty");
+            Debug.Log("Appliance is empty");
             return null;
         }
     }
