@@ -5,7 +5,7 @@ using UnityEngine;
 public class applianceState : MonoBehaviour
 {
     //private System.Windows.Forms.Timer timer1;  
-    private GameObject gameObject = null;
+    private GameObject foodCooking = null;
 
     // int case timer is needed in appliance
     /*private int counter = 60;
@@ -24,14 +24,19 @@ public class applianceState : MonoBehaviour
             timer1.Stop();
         lblCountDown.Text = counter.ToString();
     }    */
+
     public void StartCooking(GameObject food){
-        this.gameObject = food;
-        food.GetComponent<Food>().Cook(); 
+        this.foodCooking = food;
+        //food.GetComponent<Food>().Cook(); 
     }
     public GameObject PickupFood(){
-        if (this.gameObject != null) {
-            GameObject temp = this.gameObject;
-            this.gameObject = null;
+        if (this.foodCooking != null) {
+            foodCooking.GetComponent<MeshRenderer>().enabled = true;
+            foodCooking.GetComponent<BoxCollider>().enabled = true;
+            foodCooking.SetActive(false);
+
+            GameObject temp = this.foodCooking;
+            this.foodCooking = null;
             return temp;
         }else{
             print("Appliance is empty");

@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour{ 
+public class Player : MonoBehaviour{
 
 	//private String is_hit_sound; 
 	//private String dying_sound;
-
-	/*
+	private GameObject inHand;
+	[SerializeField] private float shootSpeed;
+    /*
 	public Player(){ 
 		this.hp = 100; 
 		this.level = 0; 
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour{
 		this.dying_sound = "aaahhh"; 
 		this.is_dead = false; 
 	}*/
-	/*
+    /*
 	public void take_damage(int damage){
 		if(damage >= this.hp){ 
 			this.hp = 0; 
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour{
 		} 
 	}
 */
-	/*
+    /*
 	public void gain_exp(int exp_gained){ 
 		if(this.exp + exp_gained >= this.exp_needed_to_level_up){ 
 			this.level ++;
@@ -40,8 +41,42 @@ public class Player : MonoBehaviour{
 		}
 	}
 	*/
-	private void Shoot()
+
+    private void Start()
     {
-		Debug.Log("SHOOT");
+		inHand = null;
     }
-}  
+
+    private void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+			Shoot();
+        }
+    }
+
+    private void Shoot()
+    {
+		if (inHand != null)
+		{
+			inHand.GetComponent<Food>().Shot(transform, shootSpeed);
+			inHand = null;
+		}
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (inHand == null && Input.GetMouseButton(1))
+        {
+			if (other.CompareTag("PickUp"))
+			{
+				inHand = other.gameObject;
+				inHand.GetComponent<Food>().PickUp();
+			}else if (other.CompareTag("Appliance"))
+            {
+				inHand = other.GetComponent<applianceState>().PickupFood();
+				Debug.Log("THing: " + inHand);
+            }
+        }
+    }
+}
