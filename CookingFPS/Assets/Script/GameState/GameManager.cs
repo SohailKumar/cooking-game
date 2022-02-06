@@ -9,11 +9,32 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
     public Text stoveText;
     public Text handText;
+    public GameObject potato;
+    public Transform poPos;
+    public GameObject bread;
+    public Transform bPos;
+
+    [SerializeField] private float timeBtwSpawn;
+    private float currTimeSpawn;
 
     private void Start()
     {
         gameOverPanel.SetActive(false);
         
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.F) && currTimeSpawn<=0)
+        {
+            Instantiate(bread, bPos.position, Quaternion.identity);
+            Instantiate(potato, poPos.position, Quaternion.identity);
+            currTimeSpawn = timeBtwSpawn;
+        }
+        if(currTimeSpawn > 0)
+        {
+            currTimeSpawn -= Time.deltaTime;
+        }
     }
 
     public void NextLevel(){

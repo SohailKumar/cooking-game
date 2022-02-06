@@ -113,6 +113,7 @@ MonoBehaviour:
   step: 2
   target: {fileID: 0}
   gm: {fileID: 0}
+  spawnSource: {fileID: 0}
   timeBtwDmg: 1
 --- !u!54 &8509614900452252500
 Rigidbody:

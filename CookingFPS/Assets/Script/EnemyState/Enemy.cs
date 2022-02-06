@@ -7,6 +7,7 @@ public class Enemy:MonoBehaviour{
 	[SerializeField] private float step;
 	public GameObject target;
     public GameManager gm;
+    public GameObject spawnSource;
     //private String battle_cry; 
     //private String is_hit_sound; 
     //private String dying_sound; 
@@ -50,6 +51,13 @@ public class Enemy:MonoBehaviour{
         if (collision.gameObject.CompareTag("Protect"))
         {
             gm.GameOver();
+        }
+    }
+    public void OnDestroy()
+    {
+        if (spawnSource != null)
+        {
+            spawnSource.GetComponent<EnemySpawner>().EnemyDestroyed();
         }
     }
 }

@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3030601227518956402
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 522745701, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: cookTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 522745701, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: cookedFood
+      value: 
+      objectReference: {fileID: 2502827549541711794, guid: fd7f89faf7d7bc848901f0a1eb4a5b6a, type: 3}
+    - target: {fileID: 1041109366398028235, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 370c403df6ff4ac47ad1bd203182bb55, type: 2}
+    - target: {fileID: 1545366907796006942, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_Name
+      value: potato Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.427893
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2070295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.986109
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000081460335
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178035430923137700, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996640026016382209, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7432673271177879515, guid: aacff671f14b0474ab526267ae90e6ae, type: 3}
+    - target: {fileID: 5472141452427143342, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_Name
+      value: potato Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5832178941023193467, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 370c403df6ff4ac47ad1bd203182bb55, type: 2}
+    - target: {fileID: 8580756493113195953, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7432673271177879515, guid: aacff671f14b0474ab526267ae90e6ae, type: 3}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 4797330a4bd5cf64697b76a4e49f46d3, type: 3}
