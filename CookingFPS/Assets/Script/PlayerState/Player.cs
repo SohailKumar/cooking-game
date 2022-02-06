@@ -8,9 +8,6 @@ public class Player : MonoBehaviour{
 	//private String dying_sound;
 	[SerializeField] private GameObject inHand;
 	[SerializeField] private float shootSpeed;
-	public GameObject bread;
-	public GameObject potato;
-	public GameObject bakedP;
 
     /*
 	public Player(){ 
