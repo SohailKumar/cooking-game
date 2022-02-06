@@ -7,6 +7,8 @@ TagManager:
   - Appliance
   - Enemy
   - PickUp
+  - GameManager
+  - Protect
   layers:
   - Default
   - TransparentFX
