@@ -23,6 +23,8 @@ public class Potato : Food
                 isCooking = false;
                 currTime = 0;
                 GameObject bp = Instantiate(bakedPotato, stove.transform.position, Quaternion.identity);
+                bp.GetComponent<MeshRenderer>().enabled = false;
+                bp.gameObject.GetComponent<Collider>().enabled = false;
                 stove.GetComponent<applianceState>().SwitchFood(bp);
                 Debug.Log("Baked Potato");
                 //switch to baked potato.

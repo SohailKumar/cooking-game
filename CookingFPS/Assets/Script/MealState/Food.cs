@@ -34,6 +34,7 @@ public abstract class Food: MonoBehaviour{
 
             Debug.DrawLine(transform.position, hit.point, Color.blue, 5);
             //transform.LookAt(hit.point);
+            rb.velocity = Vector3.zero;
             rb.AddForce(targetDir.normalized * shootSpeed, ForceMode.Impulse);
         }
 

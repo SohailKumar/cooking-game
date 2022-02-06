@@ -12,9 +12,8 @@ public class applianceState : MonoBehaviour
     }
     public GameObject PickupFood(){
         if (this.foodCooking != null) {
-            foodCooking.GetComponent<MeshRenderer>().enabled = true;
-            foodCooking.GetComponent<BoxCollider>().enabled = true;
-            foodCooking.SetActive(false);
+            foodCooking.GetComponent<MeshRenderer>().enabled = false;
+            foodCooking.GetComponent<BoxCollider>().enabled = false;
 
             GameObject temp = this.foodCooking;
             this.foodCooking = null;
