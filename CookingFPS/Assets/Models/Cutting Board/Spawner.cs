@@ -13,9 +13,9 @@ public class Spawner : MonoBehaviour
         Spawn();
     }
 
-    void Spawn()
+    public void Spawn()
     {
-        GameObject Spawned = Instantiate(spawnable, transform.position, transform.rotation);
-        Spawned.GetComponent(ReSpawner).spawner = gameObject;
+        GameObject Spawned = Instantiate(spawnable, (transform.position + new Vector3(0,0.17f,0)), new Quaternion(0, 0, 0, 0));
+        Spawned.GetComponent<ReSpawner>().spawnSource = gameObject;
     }
 }
