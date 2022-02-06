@@ -1,3 +1,5 @@
+using System; 
+using System.Windows.Forms.DateVisualization.Charting
 public class Player{ 
 	private int hp; 
 	private int level; 
@@ -37,9 +39,4 @@ public class Player{
 			this.exp += this.exp_gained; 
 		}
 	}
-
-	public void shoot(Meal meal){ 
-	}  
-
-
 }  

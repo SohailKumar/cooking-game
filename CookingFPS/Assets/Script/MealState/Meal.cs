@@ -7,5 +7,7 @@ public abstract class Meal{
 	private int damage_points;
 	private Bool bread; 
 	private Bool potato;
-	private float cook_time;  
+	private float cook_time;
+
+	  
 } 
