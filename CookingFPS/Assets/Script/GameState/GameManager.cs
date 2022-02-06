@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverPanel;
+    public Text stoveText;
+    public Text handText;
 
     private void Start()
     {
@@ -26,5 +28,16 @@ public class GameManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void UpdateStove(string add)
+    {
+        stoveText.text = ("Stove: " + add);
+    }
+
+    public void UpdateHand(string add)
+    {
+        handText.text = ("Hand: " + add);
     }
 }

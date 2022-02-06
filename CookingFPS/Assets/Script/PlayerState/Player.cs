@@ -8,6 +8,7 @@ public class Player : MonoBehaviour{
 	//private String dying_sound;
 	[SerializeField] private GameObject inHand;
 	[SerializeField] private float shootSpeed;
+	private GameManager gm;
 
     /*
 	public Player(){ 
@@ -45,8 +46,11 @@ public class Player : MonoBehaviour{
 
     private void Start()
     {
+		gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		inHand = null;
-    }
+		gm.UpdateHand ("None");
+
+	}
 
     private void Update()
     {
@@ -62,6 +66,7 @@ public class Player : MonoBehaviour{
 		{
 			inHand.GetComponent<Food>().Shot(this.transform, shootSpeed);
 			inHand = null;
+			gm.UpdateHand("None");
 		}
     }
 
@@ -74,17 +79,18 @@ public class Player : MonoBehaviour{
                 try
 				{
 					inHand = other.gameObject;
-					Debug.Log("inhand: " + inHand.name);
 					other.GetComponent<Food>().PickUp();
-					Debug.Log("2");
+					gm.UpdateHand(inHand.gameObject.name);
 				}catch
                 {
 					inHand = null;
-                }
+					gm.UpdateHand("None");
+				}
 			}else if (other.CompareTag("Appliance"))
             {
 				inHand = other.GetComponent<applianceState>().PickupFood();
-            }
+				gm.UpdateHand(inHand.name);
+			}
         }
     }
 }
