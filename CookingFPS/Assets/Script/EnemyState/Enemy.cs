@@ -1,9 +1,11 @@
-using System; 
-public abstract class Enemy{ 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class Enemy:MonoBehaviour{ 
 	private int hp; 
-	private String weakness; 
-	private String battle_cry; 
-	private String is_hit_sound; 
-	private String dying_sound; 
+	//private String battle_cry; 
+	//private String is_hit_sound; 
+	//private String dying_sound; 
 }
 
